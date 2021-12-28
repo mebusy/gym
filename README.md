@@ -19,7 +19,7 @@ $ docker build  -t dockergym:latest .
 $ docker run --rm  -v `pwd`:/opt/work/  dockergym <your>.py
 ```
 
-Or just use prebuilt docker image
+Or just use **prebuilt** docker image
 
 ```bash
 $ docker run --rm  -v `pwd`:/opt/work/  mebusy/gym  <your>.py
