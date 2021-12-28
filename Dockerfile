@@ -1,5 +1,5 @@
 # FROM python:3.8-alpine
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 MAINTAINER golden_slime@hotmail.com
 
@@ -8,13 +8,15 @@ MAINTAINER golden_slime@hotmail.com
 
 # ENV PYTHONPATH=/usr/lib/python3.8/site-packages
 
-RUN pip3 install gym atari-py  pyglet
+# RUN apt-get update && apt-get install python3-opengl
+
+RUN pip3 install gym atari-py
 # RUN pip3 install gym[all]
 
 # change work directory
 WORKDIR /opt/work
 
-# ENTRYPOINT ["python3"]
-CMD ["bash"]
+ENTRYPOINT ["python"]
+# CMD ["python"]
 
 
