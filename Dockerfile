@@ -8,11 +8,13 @@ MAINTAINER golden_slime@hotmail.com
 
 # ENV PYTHONPATH=/usr/lib/python3.8/site-packages
 
-RUN pip3 install gym atari-py
+RUN pip3 install gym atari-py  pyglet
+# RUN pip3 install gym[all]
 
 # change work directory
 WORKDIR /opt/work
 
-ENTRYPOINT ["python3"]
+# ENTRYPOINT ["python3"]
+CMD ["bash"]
 
 
