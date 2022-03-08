@@ -8,11 +8,19 @@ MAINTAINER golden_slime@hotmail.com
 
 # ENV PYTHONPATH=/usr/lib/python3.8/site-packages
 
-# RUN apt-get update && apt-get install python3-opengl
+RUN apt-get update -y && \
+    apt-get install -y xvfb && \
+    apt-get install -y python3-opengl
 
-RUN pip3 install gym atari-py tensorboard torch==1.10.0+cpu torchvision==0.11.1+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
+RUN pip3 install pygame gym atari-py pyvirtualdisplay tensorboard torch==1.10.0+cpu torchvision==0.11.1+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
 
 # RUN pip3 install gym[all]
+# for more game enviroments 
+#   https://towardsdatascience.com/how-to-render-openai-gym-on-windows-65767ab52ae2
+# RUN apt-get install -y cmake && \
+#     apt-get install -y zlib1g zlib1g-dev
+
+# ENV SDL_VIDEODRIVER dummy  # disable pygame sound
 
 # change work directory
 WORKDIR /opt/work
