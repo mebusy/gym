@@ -7,7 +7,7 @@ docker gym environment
 - gym , so far , only [atari game] installed.
 - pytorch
 - tensorboard
-  - docker run -p 0.0.0.0:6006:6006 ...
+  - docker run -p 6006:6006 ...
   - localhost:6006 to open tensorboard ?
 - matplotlib
 
