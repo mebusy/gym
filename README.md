@@ -5,6 +5,9 @@ docker gym environment
 - python3.8
 - numpy
 - gym , so far , only [atari game] installed.
+- pytorch
+- tensorboard
+- matplotlib
 
 
 ## Build Docker Image
