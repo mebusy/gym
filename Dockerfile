@@ -10,7 +10,8 @@ MAINTAINER golden_slime@hotmail.com
 
 # RUN apt-get update && apt-get install python3-opengl
 
-RUN pip3 install gym atari-py
+RUN pip3 install gym atari-py tensorboard torch==1.10.0+cpu torchvision==0.11.1+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
+
 # RUN pip3 install gym[all]
 
 # change work directory
