@@ -20,7 +20,8 @@ RUN pip3 install pygame gym atari-py pyvirtualdisplay tensorboard torch==1.10.0+
 # RUN apt-get install -y cmake && \
 #     apt-get install -y zlib1g zlib1g-dev
 
-# ENV SDL_VIDEODRIVER dummy  # disable pygame sound
+# disable pygame sound
+ENV SDL_VIDEODRIVER dummy
 
 # change work directory
 WORKDIR /opt/work
