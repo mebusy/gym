@@ -14,7 +14,7 @@ RUN apt-get update -y && \
 
 RUN pip3 install pygame gym atari-py pyvirtualdisplay tensorboard torch==1.10.0+cpu torchvision==0.11.1+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
 
-RUN pip install matplotlib
+RUN pip install matplotlib pyglet
 # RUN apt-get install -y tk-dev
 RUN apt-get install -y python3-tk
 # RUN apt-get install -y x11-utils
