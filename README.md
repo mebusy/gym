@@ -2,10 +2,11 @@
 
 docker gym environment
 
-- python3.8
+- Python 3.9-slim
 - numpy
 - gym , so far , only [atari game] installed.
 - pytorch
+    - tensorboard torch==1.12.0+cpu torchvision==0.13.0+cpu 
 - tensorboard
   - docker run -p 6006:6006 ...
   - localhost:6006 to open tensorboard ?
