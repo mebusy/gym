@@ -13,14 +13,14 @@ RUN apt-get update -y && \
     apt-get install -y python3-opengl
 
 # atari-py
-RUN pip3 install pygame gym  pyvirtualdisplay tensorboard torch==1.12.0+cpu torchvision==0.13.0+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
+RUN pip3 install pygame  pyvirtualdisplay tensorboard torch==1.12.0+cpu torchvision==0.13.0+cpu  -f https://download.pytorch.org/whl/cpu/torch_stable.html # torchaudio==0.10.0+cpu
 
 RUN pip install matplotlib pyglet
 # RUN apt-get install -y tk-dev
 RUN apt-get install -y python3-tk
 # RUN apt-get install -y x11-utils
 
-RUN pip3 install gym[atari,accept-rom-license]  #==0.21.0
+RUN pip3 install gym==0.22.0  gym[atari,accept-rom-license]==0.22.0
 # for more game enviroments 
 #   https://towardsdatascience.com/how-to-render-openai-gym-on-windows-65767ab52ae2
 # RUN apt-get install -y cmake && \
