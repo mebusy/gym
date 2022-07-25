@@ -26,6 +26,8 @@ RUN pip3 install gym==0.22.0  gym[atari,accept-rom-license]==0.22.0
 # RUN apt-get install -y cmake && \
 #     apt-get install -y zlib1g zlib1g-dev
 
+RUN apt-get install -y wget
+
 # disable pygame sound
 ENV SDL_VIDEODRIVER dummy
 
