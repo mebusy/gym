@@ -64,5 +64,18 @@ docker run --name tensorboard --rm -it -v `pwd`:/opt/work/ \
 Now you can check training process via `http://localhost:6006/`
 
 
+# Install entire environment directly on MacOSX
+
+<details>
+
+```bah
+pip3 install torch torchvision torchaudio
+pip3 install pygame tensorboard matplotlib pyglet
+pip3 install gym==0.22.0 'gym[accept-rom-license]'
+```
+
+</details>
+
+
 
 
