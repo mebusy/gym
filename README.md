@@ -22,13 +22,13 @@ $ docker build  -t dockergym:latest .
 ## Usage
 
 ```bash
-$ docker run --rm  -v `pwd`:/opt/work/  dockergym <your>.py
+$ docker run --rm -it -v `pwd`:/opt/work/  dockergym <your>.py
 ```
 
 Or just use **prebuilt** docker image
 
 ```bash
-$ docker run --rm  -v `pwd`:/opt/work/  mebusy/gym  <your>.py
+$ docker run --rm -it -v `pwd`:/opt/work/  mebusy/gym  <your>.py
 ```
 
 ## GUI support
@@ -40,7 +40,25 @@ On MacOSX, please follow this [guide](https://github.com/mebusy/notes/blob/maste
 And check the [cartpole example](./test/cartpole.py)
 
 ```bash
-docker run --rm -it -v `pwd`:/opt/work/ -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix mebusy/gym <your>.py
- 
+docker run --name gym --rm -it -v `pwd`:/opt/work/ \
+    -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
+    mebusy/gym <your>.py
 ```
+
+## Run Tensorboard
+
+suppose your pytorch training workdir named `results`, run following script under same directory of `results`.
+
+```bash
+docker run --name tensorboard --rm -it -v `pwd`:/opt/work/ \
+    -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -p 6006:6006 \
+    --entrypoint tensorboard  \
+    mebusy/gym  --bind_all --logdir /opt/work/results
+```
+ 
+Now you can check training process via `http://localhost:6006/`
+
+
+
 
