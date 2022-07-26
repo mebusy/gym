@@ -40,6 +40,7 @@ On MacOSX, please follow this [guide](https://github.com/mebusy/notes/blob/maste
 And check the [cartpole example](./test/cartpole.py)
 
 ```bash
+# use xterm to enable GUI
 docker run --name gym --rm -it -v `pwd`:/opt/work/ \
     -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
     mebusy/gym <your>.py
@@ -50,6 +51,7 @@ docker run --name gym --rm -it -v `pwd`:/opt/work/ \
 suppose your pytorch training workdir named `results`, run following script under same directory of `results`.
 
 ```bash
+# use --entrypoint to override docker default entrypoint [python3]
 docker run --name tensorboard --rm -it -v `pwd`:/opt/work/ \
     -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
     -p 6006:6006 \
