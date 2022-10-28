@@ -28,13 +28,18 @@ RUN pip3 install gym==0.22.0  gym[atari,accept-rom-license]==0.22.0
 
 RUN apt-get install -y wget
 
-# disable pygame sound
-ENV SDL_VIDEODRIVER dummy
+
+# ENV SDL_VIDEODRIVER dummy
+# ldconfig -p | grep -i gl.so
+#	libGL.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGL.so.1
+RUN rm /usr/lib/x86_64-linux-gnu/libGL.so.1
 
 # change work directory
 WORKDIR /opt/work
 
+# /bin/sh
 ENTRYPOINT ["python"]
+
 # CMD ["python"]
 
 
