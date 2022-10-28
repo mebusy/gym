@@ -40,9 +40,9 @@ On MacOSX, please follow this [guide](https://github.com/mebusy/notes/blob/maste
 And check the [cartpole example](./test/cartpole.py)
 
 ```bash
-# use xterm to enable GUI
+# use xterm to enable GUI     -v /tmp/.X11-unix:/tmp/.X11-unix \
 docker run --name gym --rm -it -v `pwd`:/opt/work/ \
-    -e DISPLAY=${your-ip}:0 -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY=${your-ip}:0 
     mebusy/gym <your>.py
 ```
 
