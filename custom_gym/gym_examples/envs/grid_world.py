@@ -88,7 +88,7 @@ class GridWorldEnv(EnvFramework):
     def draw(self, canvas):
         canvas.fill((255, 255, 255))
         pix_square_size = (
-            self.window_size / self.size
+            self.window_wh[0] / self.size
         )  # The size of a single grid square in pixels
 
         # First we draw the target
@@ -114,13 +114,13 @@ class GridWorldEnv(EnvFramework):
                 canvas,
                 0,
                 (0, pix_square_size * x),
-                (self.window_size, pix_square_size * x),
+                (self.window_wh[0], pix_square_size * x),
                 width=3,
             )
             pygame.draw.line(
                 canvas,
                 0,
                 (pix_square_size * x, 0),
-                (pix_square_size * x, self.window_size),
+                (pix_square_size * x, self.window_wh[0]),
                 width=3,
             )
