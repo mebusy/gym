@@ -13,6 +13,10 @@ docker gym environment
 - matplotlib
 
 
+## Gym verison
+
+gym version has been upgrade to 0.26.2 , if you want to 0.22.0,  use image `mebusy/gym:0.22` instead
+
 ## Build Docker Image
 
 ```bash
