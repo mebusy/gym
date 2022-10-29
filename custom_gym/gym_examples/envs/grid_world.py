@@ -3,10 +3,11 @@ from gym import spaces
 import pygame
 import numpy as np
 
-from gym_examples.envs.framework import EnvFramework
+# from gym_examples.envs.framework import EnvFramework
+from . import framework
 
 
-class GridWorldEnv(EnvFramework):
+class GridWorldEnv(framework.EnvFramework):
     def __init__(self, render_mode=None, size=5):
         super().__init__(render_mode=render_mode, size=size)
 
